@@ -1,0 +1,1 @@
+# class_05_power

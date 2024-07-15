@@ -1,0 +1,92 @@
+body {
+    font-family: "Poppins", sans-serif;
+    --hue: 10;
+    background: linear-gradient(90deg, hsl(var(--hue), 100%, 10%), hsl(var(--hue), 100%, 30%));
+    color:white;
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    padding: 20px 0;
+    font-weight: 900;
+}
+
+h2 {
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+
+.card-container {
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    display:grid;
+    grid-template-columns: 6fr 3fr 100px;
+    background: hsl(var(--hue), 60%, 20%);
+    padding: 20px;
+    border-radius: 10px;
+    --status-color: rgb(172, 4, 4);
+}
+
+.card .description{
+    display:grid;
+    gap: 5px;
+}
+
+.card .time {
+    font-size: 13px;
+}
+.card .time span {
+    /* color: hsl(var(--hue), 0%, 30%); */
+    color: hsl(55.9deg 91.59% 44.05%);
+}
+.card .description .location {
+    font-weight: 800;
+}
+
+.card .description .address {
+    color: hsl(var(--hue), 100%, 60%);
+    font-weight: 300;
+    font-style: italic;
+    font-size: 0.75em;
+}
+.card .timer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+}
+.card .illustration {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status {
+    width: 16px;
+    height: 16px;
+    background: var(--status-color);
+    border-radius: 100%;
+    box-shadow: 0 0 10px var(--status-color);
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px -4px var(--status-color);
+    }
+    100% {
+        box-shadow: 0 0 10px 4px var(--status-color);
+    }
+}
+
+.status {
+    animation: glow 1.5s infinite ease-in-out alternate;
+}
